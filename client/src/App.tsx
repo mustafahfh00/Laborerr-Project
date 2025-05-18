@@ -7,6 +7,8 @@ import AuthPage from "@/pages/auth-page";
 import FreelancerPage from "@/pages/freelancer-page";
 import CategoryPage from "@/pages/category-page";
 import NotFound from "@/pages/not-found";
+import LaborerPostPage from "@/pages/LaborerPostPage";
+
 
 function Router() {
   return (
@@ -15,6 +17,8 @@ function Router() {
       <Route path="/auth" component={AuthPage} />
       <Route path="/freelancer/:id" component={FreelancerPage} />
       <Route path="/category/:id" component={CategoryPage} />
+      <Route path="/laborer-post" component={LaborerPostPage} /> 
+      
       <Route component={NotFound} />
     </Switch>
   );

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { CategoryNavbar } from "@/components/shared/category-navbar";
+import { LaborerPostButton } from "@/components/Laborer/buttons/LaborerPostButton";
 
 export function Header() {
   const [isSearchExpanded, setIsSearchExpanded] = useState(false);
@@ -51,16 +52,22 @@ export function Header() {
         )}
         
         {/* Navigation - Desktop */}
-        <nav className="flex items-center space-x-6">
+        <nav className="flex items-center space-x-4"> {/* Reduced space-x from 6 to 4 */}
           <Link href="/how-it-works" className="hidden md:block text-neutral-700 hover:text-primary">
             How it Works
           </Link>
           <Link href="/categories" className="hidden md:block text-neutral-700 hover:text-primary">
             Browse Services
           </Link>
+          
+          {/* Added Laborer Post Button */}
+          <div className="hidden md:block">
+  <LaborerPostButton />
+</div>
+          
           <Button 
             variant="outline" 
-            className="hidden md:block border-primary text-primary hover:bg-primary hover:text-white"
+            className="hidden md:flex border-primary text-primary hover:bg-primary hover:text-white"
             onClick={() => navigate("/auth")}
           >
             Login
@@ -96,6 +103,10 @@ export function Header() {
                 </Link>
                 <Link href="/categories" className="text-neutral-700 hover:text-primary py-2">
                   Browse Services
+                </Link>
+                {/* Added mobile version of Post as Laborer */}
+                <Link href="/laborer-post" className="text-neutral-700 hover:text-primary py-2">
+                  Post as Laborer
                 </Link>
                 <Link href="/auth" className="text-neutral-700 hover:text-primary py-2">
                   Login
